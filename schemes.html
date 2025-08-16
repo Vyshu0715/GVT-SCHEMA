@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Schemes - SmartSahyata</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/schemes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <img src="./Capture.PNG" style="height: 80px;width: 150px;"> 
+      <nav id="nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="schemes.html" class="active">Schemes</a></li>
+          <li><a href="eligibility.html">Check Eligibility</a></li>
+          <li><a href="tracking.html">Track Application</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Government Schemes</h1>
+      <p>Explore all available government schemes and find the right support for you</p>
+    </div>
+  </section>
+
+  <section class="schemes-search">
+    <div class="container">
+      <div class="search-box">
+        <input type="text" id="scheme-search" placeholder="Search for schemes...">
+        <button id="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="filter-box">
+        <div class="filter-group">
+          <label for="category-filter">Category</label>
+          <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="agriculture">Agriculture</option>
+            <option value="education">Education</option>
+            <option value="women-empowerment">Women Empowerment</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="housing">Housing</option>
+            <option value="skill-development">Skill Development</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="eligibility-filter">Eligibility</label>
+          <select id="eligibility-filter">
+            <option value="all">All</option>
+            <option value="student">Students</option>
+            <option value="farmer">Farmers</option>
+            <option value="women">Women</option>
+            <option value="senior-citizen">Senior Citizens</option>
+            <option value="bpl">BPL Families</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schemes-list">
+    <div class="container">
+      <div class="schemes-grid">
+        <!-- Agriculture Schemes -->
+        <div class="scheme-card" data-category="agriculture" data-eligible="farmer">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/4629628/pexels-photo-4629628.jpeg" alt="Farmer Assistance Scheme">
+            <div class="scheme-category">Agriculture</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Farmer Assistance Scheme</h3>
+            <p>Financial assistance for farmers to improve agricultural productivity and income.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Dec 31, 2025</span>
+              <span><i class="fas fa-user"></i> For: Farmers</span>
+            </div>
+            <a href="farmer-assistance.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Education Schemes -->
+        <div class="scheme-card" data-category="education" data-eligible="student">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/8471831/pexels-photo-8471831.jpeg" alt="Education Scholarship">
+            <div class="scheme-category">Education</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Education Scholarship</h3>
+            <p>Scholarships for students from economically weaker sections to pursue higher education.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Nov 15, 2025</span>
+              <span><i class="fas fa-user"></i> For: Students</span>
+            </div>
+            <a href="education-scholarship.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Women Empowerment Schemes -->
+        <div class="scheme-card" data-category="women-empowerment" data-eligible="women">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg" alt="Women Empowerment Program">
+            <div class="scheme-category">Women Empowerment</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Women Empowerment Program</h3>
+            <p>Supporting women entrepreneurs with training, financial assistance, and mentorship.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Ongoing</span>
+              <span><i class="fas fa-user"></i> For: Women</span>
+            </div>
+            <a href="women-empowerment.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Healthcare Schemes -->
+        <div class="scheme-card" data-category="healthcare" data-eligible="bpl">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/7551442/pexels-photo-7551442.jpeg" alt="Healthcare Support">
+            <div class="scheme-category">Healthcare</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Healthcare Support</h3>
+            <p>Medical insurance and healthcare support for underprivileged families.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Ongoing</span>
+              <span><i class="fas fa-user"></i> For: BPL Families</span>
+            </div>
+            <a href="healthcare-support.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Housing Schemes -->
+        <div class="scheme-card" data-category="housing" data-eligible="bpl">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/6647110/pexels-photo-6647110.jpeg" alt="Housing Scheme">
+            <div class="scheme-category">Housing</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Affordable Housing Scheme</h3>
+            <p>Subsidized housing for economically weaker sections and low-income families.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Mar 31, 2026</span>
+              <span><i class="fas fa-user"></i> For: BPL Families</span>
+            </div>
+            <a href="housing-scheme.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Skill Development Schemes -->
+        <div class="scheme-card" data-category="skill-development" data-eligible="student">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg" alt="Skill Development Program">
+            <div class="scheme-category">Skill Development</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Skill Development Program</h3>
+            <p>Free training programs to enhance employability and entrepreneurship skills.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Ongoing</span>
+              <span><i class="fas fa-user"></i> For: Youth</span>
+            </div>
+            <a href="skill-development.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Senior Citizen Schemes -->
+        <div class="scheme-card" data-category="healthcare" data-eligible="senior-citizen">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/7551672/pexels-photo-7551672.jpeg" alt="Senior Citizen Care">
+            <div class="scheme-category">Healthcare</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Senior Citizen Care Program</h3>
+            <p>Healthcare and financial support for senior citizens.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Ongoing</span>
+              <span><i class="fas fa-user"></i> For: Senior Citizens</span>
+            </div>
+            <a href="senior-citizen-care.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Rural Development Schemes -->
+        <div class="scheme-card" data-category="agriculture" data-eligible="farmer">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/4946919/pexels-photo-4946919.jpeg" alt="Rural Development Program">
+            <div class="scheme-category">Agriculture</div>
+          </div>
+          <div class="scheme-content">
+            <h3>Rural Development Program</h3>
+            <p>Infrastructure development and livelihood enhancement in rural areas.</p>
+            <div class="scheme-meta">
+              <span><i class="fas fa-calendar-alt"></i> Last Date: Ongoing</span>
+              <span><i class="fas fa-user"></i> For: Rural Communities</span>
+            </div>
+            <a href="rural-development.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div id="no-results" style="display: none;">
+        <p>No schemes match your search criteria. Please try different filters.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="scheme-comparison">
+    <div class="container">
+      <h2 class="section-title">Compare Schemes</h2>
+      <p class="text-center mb-4">Select up to 3 schemes to compare their benefits and eligibility criteria.</p>
+      
+      <div class="compare-selection">
+        <div class="form-group">
+          <label for="compare-scheme-1">Scheme 1</label>
+          <select id="compare-scheme-1">
+            <option value="">Select a scheme</option>
+            <option value="farmer-assistance">Farmer Assistance Scheme</option>
+            <option value="education-scholarship">Education Scholarship</option>
+            <option value="women-empowerment">Women Empowerment Program</option>
+            <option value="healthcare-support">Healthcare Support</option>
+            <option value="housing-scheme">Affordable Housing Scheme</option>
+            <option value="skill-development">Skill Development Program</option>
+            <option value="senior-citizen-care">Senior Citizen Care Program</option>
+            <option value="rural-development">Rural Development Program</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="compare-scheme-2">Scheme 2</label>
+          <select id="compare-scheme-2">
+            <option value="">Select a scheme</option>
+            <option value="farmer-assistance">Farmer Assistance Scheme</option>
+            <option value="education-scholarship">Education Scholarship</option>
+            <option value="women-empowerment">Women Empowerment Program</option>
+            <option value="healthcare-support">Healthcare Support</option>
+            <option value="housing-scheme">Affordable Housing Scheme</option>
+            <option value="skill-development">Skill Development Program</option>
+            <option value="senior-citizen-care">Senior Citizen Care Program</option>
+            <option value="rural-development">Rural Development Program</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="compare-scheme-3">Scheme 3</label>
+          <select id="compare-scheme-3">
+            <option value="">Select a scheme</option>
+            <option value="farmer-assistance">Farmer Assistance Scheme</option>
+            <option value="education-scholarship">Education Scholarship</option>
+            <option value="women-empowerment">Women Empowerment Program</option>
+            <option value="healthcare-support">Healthcare Support</option>
+            <option value="housing-scheme">Affordable Housing Scheme</option>
+            <option value="skill-development">Skill Development Program</option>
+            <option value="senior-citizen-care">Senior Citizen Care Program</option>
+            <option value="rural-development">Rural Development Program</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="center-btn mt-3">
+        <button id="compare-btn" class="btn btn-primary">Compare Schemes</button>
+      </div>
+      
+      <div id="comparison-results" class="mt-4" style="display: none;">
+        <div class="table-responsive">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Features</th>
+                <th id="scheme1-name">Scheme 1</th>
+                <th id="scheme2-name">Scheme 2</th>
+                <th id="scheme3-name">Scheme 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Eligibility</td>
+                <td id="scheme1-eligibility">-</td>
+                <td id="scheme2-eligibility">-</td>
+                <td id="scheme3-eligibility">-</td>
+              </tr>
+              <tr>
+                <td>Benefits</td>
+                <td id="scheme1-benefits">-</td>
+                <td id="scheme2-benefits">-</td>
+                <td id="scheme3-benefits">-</td>
+              </tr>
+              <tr>
+                <td>Documents Required</td>
+                <td id="scheme1-documents">-</td>
+                <td id="scheme2-documents">-</td>
+                <td id="scheme3-documents">-</td>
+              </tr>
+              <tr>
+                <td>Application Deadline</td>
+                <td id="scheme1-deadline">-</td>
+                <td id="scheme2-deadline">-</td>
+                <td id="scheme3-deadline">-</td>
+              </tr>
+              <tr>
+                <td>Action</td>
+                <td id="scheme1-action">-</td>
+                <td id="scheme2-action">-</td>
+                <td id="scheme3-action">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>SmartSahyata</h3>
+          <p>Your Trusted AI Gateway to Andhra Pradesh Government Schemes</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="schemes.html">Schemes</a></li>
+            <li><a href="eligibility.html">Check Eligibility</a></li>
+            <li><a href="tracking.html">Track Application</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Government Schemes</h3>
+          <ul>
+            <li><a href="farmer-assistance.html">Farmer Assistance</a></li>
+            <li><a href="education-scholarship.html">Education Scholarship</a></li>
+            <li><a href="women-empowerment.html">Women Empowerment</a></li>
+            <li><a href="healthcare-support.html">Healthcare Support</a></li>
+            <li><a href="schemes.html">View All Schemes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Information</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Government of Andhra Pradesh, Amaravati</li>
+            <li><i class="fas fa-phone"></i> +91 123-456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@smartsahyata.gov.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SmartSahyata. All rights reserved. A Government of Andhra Pradesh Initiative.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/schemes.js"></script>
+</body>
+</html>

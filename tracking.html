@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Application - SmartSahyata</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/tracking.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <img src="./Capture.PNG" style="height: 80px;width: 150px;"> 
+      <nav id="nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="schemes.html">Schemes</a></li>
+          <li><a href="eligibility.html">Check Eligibility</a></li>
+          <li><a href="tracking.html" class="active">Track Application</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Track Your Application</h1>
+      <p>Stay updated on your application status</p>
+    </div>
+  </section>
+
+  <section class="tracking-section">
+    <div class="container">
+      <div class="tracking-intro">
+        <h2>Application Tracking System</h2>
+        <p>Enter your application ID to check the current status of your application. You can find your application ID in the confirmation email or SMS received after submission.</p>
+      </div>
+
+      <div class="tracking-form-container">
+        <form id="tracking-form">
+          <div class="form-group">
+            <label for="application-id">Application ID</label>
+            <input type="text" id="application-id" placeholder="e.g., AP-123456-7890" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile-number">Registered Mobile Number</label>
+            <input type="tel" id="mobile-number" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Track Application</button>
+        </form>
+      </div>
+
+      <div id="tracking-result" style="display: none;">
+        <div class="tracking-details">
+          <div class="applicant-info">
+            <h3>Applicant Information</h3>
+            <div class="info-row">
+              <span class="info-label">Name:</span>
+              <span class="info-value" id="applicant-name">-</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Application ID:</span>
+              <span class="info-value" id="display-application-id">-</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Scheme:</span>
+              <span class="info-value" id="scheme-name">-</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Applied On:</span>
+              <span class="info-value" id="application-date">-</span>
+            </div>
+          </div>
+
+          <div class="status-info">
+            <h3>Application Status</h3>
+            <div class="current-status">
+              <div class="status-badge" id="status-badge">Pending</div>
+              <div class="status-message" id="status-message">Your application is currently under review.</div>
+            </div>
+          </div>
+
+          <div class="progress-tracker">
+            <div class="progress-item" data-status="submitted">
+              <div class="progress-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="progress-content">
+                <h4>Submitted</h4>
+                <p>Application received</p>
+                <span class="progress-date" id="submitted-date">-</span>
+              </div>
+            </div>
+            <div class="progress-item" data-status="verification">
+              <div class="progress-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="progress-content">
+                <h4>Verification</h4>
+                <p>Documents being verified</p>
+                <span class="progress-date" id="verification-date">-</span>
+              </div>
+            </div>
+            <div class="progress-item" data-status="approval">
+              <div class="progress-icon">
+                <i class="fas fa-clipboard-check"></i>
+              </div>
+              <div class="progress-content">
+                <h4>Approval</h4>
+                <p>Application reviewed</p>
+                <span class="progress-date" id="approval-date">-</span>
+              </div>
+            </div>
+            <div class="progress-item" data-status="disbursement">
+              <div class="progress-icon">
+                <i class="fas fa-rupee-sign"></i>
+              </div>
+              <div class="progress-content">
+                <h4>Disbursement</h4>
+                <p>Benefits processed</p>
+                <span class="progress-date" id="disbursement-date">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="next-steps" id="next-steps">
+            <h3>Next Steps</h3>
+            <p id="next-steps-message">Your application is being processed. You will be notified once the verification is complete.</p>
+          </div>
+
+          <div class="additional-actions">
+            <button id="download-details" class="btn btn-outline">Download Details</button>
+            <button id="track-another" class="btn btn-secondary">Track Another Application</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="no-result" style="display: none;">
+        <div class="no-result-message">
+          <div class="result-icon error">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <h3>Application Not Found</h3>
+          <p>We couldn't find an application with the provided ID and mobile number. Please verify the information and try again.</p>
+          <button id="try-again" class="btn btn-primary">Try Again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tracking-help">
+    <div class="container">
+      <div class="help-container">
+        <div class="help-item">
+          <div class="help-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <div class="help-content">
+            <h3>Can't Find Your Application?</h3>
+            <p>If you're having trouble tracking your application, please ensure you're entering the correct application ID and mobile number. The application ID is case-sensitive.</p>
+          </div>
+        </div>
+        <div class="help-item">
+          <div class="help-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="help-content">
+            <h3>Lost Your Application ID?</h3>
+            <p>If you've lost your application ID, you can retrieve it by visiting our nearest help center or by calling our helpline at +91 123-456-7890 with your registered mobile number and identity proof.</p>
+          </div>
+        </div>
+        <div class="help-item">
+          <div class="help-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="help-content">
+            <h3>Processing Time</h3>
+            <p>The typical processing time for applications is 15-30 days, depending on the scheme and verification requirements. You'll receive notifications at each stage of the process.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tracking-faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How long does it take to process an application?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>The processing time varies depending on the scheme. Typically, it takes 15-30 days from submission to final approval. However, complex applications or those requiring additional verification may take longer.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How will I be notified about status changes?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>You will receive SMS notifications on your registered mobile number at each stage of the application process. You can also check the status anytime using the tracking system on this page.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What should I do if my application is rejected?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>If your application is rejected, you'll receive a notification explaining the reason. You can address the issues mentioned and reapply, or contact our help center for assistance with the reapplication process.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I update my application after submission?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Once submitted, you cannot directly update your application. However, if you need to make corrections or provide additional information, please contact our help center with your application ID and details of the changes required.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What happens after my application is approved?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>After approval, the benefits will be disbursed according to the scheme guidelines. This may include direct bank transfers, issuance of cards or certificates, or enrollment in training programs. You'll receive detailed instructions once your application is approved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>SmartSahyata</h3>
+          <p>Your Trusted AI Gateway to Andhra Pradesh Government Schemes</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="schemes.html">Schemes</a></li>
+            <li><a href="eligibility.html">Check Eligibility</a></li>
+            <li><a href="tracking.html">Track Application</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Government Schemes</h3>
+          <ul>
+            <li><a href="schemes/farmer-assistance.html">Farmer Assistance</a></li>
+            <li><a href="schemes/education-scholarship.html">Education Scholarship</a></li>
+            <li><a href="schemes/women-empowerment.html">Women Empowerment</a></li>
+            <li><a href="schemes/healthcare-support.html">Healthcare Support</a></li>
+            <li><a href="schemes.html">View All Schemes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Information</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Government of Andhra Pradesh, Amaravati</li>
+            <li><i class="fas fa-phone"></i> +91 123-456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@smartsahyata.gov.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SmartSahyata. All rights reserved. A Government of Andhra Pradesh Initiative.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/tracking.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Eligibility - SmartSahyata</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/eligibility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <img src="./Capture.PNG" style="height: 80px;width: 150px;"> 
+      <nav id="nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="schemes.html">Schemes</a></li>
+          <li><a href="eligibility.html" class="active">Check Eligibility</a></li>
+          <li><a href="tracking.html">Track Application</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Check Your Eligibility</h1>
+      <p>Find out which government schemes you qualify for</p>
+    </div>
+  </section>
+
+  <section class="eligibility-check">
+    <div class="container">
+      <div class="eligibility-intro">
+        <h2>Find the Right Government Schemes for You</h2>
+        <p>Our AI-powered eligibility checker will help you discover which government schemes you qualify for based on your profile. This will save you time and effort by focusing only on schemes that match your eligibility criteria.</p>
+      </div>
+
+      <div class="eligibility-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Fill Basic Information</h3>
+            <p>Provide your basic details like age, gender, location, etc.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Answer Eligibility Questions</h3>
+            <p>Answer a few questions about your occupation, income, and other relevant details</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Get Personalized Results</h3>
+            <p>Receive a list of schemes you're eligible for with direct links to apply</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eligibility-form-container">
+        <form id="eligibility-form">
+          <div class="form-section">
+            <h3>Personal Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" required>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date-of-birth">Date of Birth</label>
+                <input type="date" id="date-of-birth" required>
+              </div>
+              <div class="form-group">
+                <label for="aadhaar">Aadhaar Number</label>
+                <input type="text" id="aadhaar" pattern="[0-9]{12}" placeholder="12-digit Aadhaar number" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address (Optional)</label>
+                <input type="email" id="email">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Address Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="district">District</label>
+                <select id="district" required>
+                  <option value="">Select</option>
+                  <option value="anantapur">Anantapur</option>
+                  <option value="chittoor">Chittoor</option>
+                  <option value="east-godavari">East Godavari</option>
+                  <option value="guntur">Guntur</option>
+                  <option value="krishna">Krishna</option>
+                  <option value="kurnool">Kurnool</option>
+                  <option value="prakasam">Prakasam</option>
+                  <option value="nellore">Nellore</option>
+                  <option value="srikakulam">Srikakulam</option>
+                  <option value="visakhapatnam">Visakhapatnam</option>
+                  <option value="vizianagaram">Vizianagaram</option>
+                  <option value="west-godavari">West Godavari</option>
+                  <option value="kadapa">Kadapa</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="area-type">Area Type</label>
+                <select id="area-type" required>
+                  <option value="">Select</option>
+                  <option value="urban">Urban</option>
+                  <option value="rural">Rural</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Occupational Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <select id="occupation" required>
+                  <option value="">Select</option>
+                  <option value="farmer">Farmer</option>
+                  <option value="student">Student</option>
+                  <option value="business">Business Owner</option>
+                  <option value="employee">Private Sector Employee</option>
+                  <option value="government">Government Employee</option>
+                  <option value="daily-wage">Daily Wage Worker</option>
+                  <option value="unemployed">Unemployed</option>
+                  <option value="homemaker">Homemaker</option>
+                  <option value="retired">Retired</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="annual-income">Annual Income (₹)</label>
+                <select id="annual-income" required>
+                  <option value="">Select</option>
+                  <option value="below-50000">Below ₹50,000</option>
+                  <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                  <option value="100000-300000">₹1,00,000 - ₹3,00,000</option>
+                  <option value="300000-500000">₹3,00,000 - ₹5,00,000</option>
+                  <option value="above-500000">Above ₹5,00,000</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Additional Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="education">Highest Education</label>
+                <select id="education" required>
+                  <option value="">Select</option>
+                  <option value="no-formal">No Formal Education</option>
+                  <option value="primary">Primary School</option>
+                  <option value="secondary">Secondary School</option>
+                  <option value="higher-secondary">Higher Secondary</option>
+                  <option value="graduate">Graduate</option>
+                  <option value="post-graduate">Post Graduate</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="marital-status">Marital Status</label>
+                <select id="marital-status" required>
+                  <option value="">Select</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                  <option value="widowed">Widowed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="family-members">Number of Family Members</label>
+                <input type="number" id="family-members" min="1" max="20" required>
+              </div>
+              <div class="form-group">
+                <label for="own-house">Do you own a house?</label>
+                <select id="own-house" required>
+                  <option value="">Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="own-land">Do you own agricultural land?</label>
+                <select id="own-land" required>
+                  <option value="">Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <div class="form-group land-area" style="display: none;">
+                <label for="land-area">Land Area (in acres)</label>
+                <input type="number" id="land-area" step="0.01" min="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group terms-container">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I hereby declare that all the information provided is true to the best of my knowledge. I understand that providing false information may result in rejection of my application.</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Check Eligibility</button>
+        </form>
+
+        <div id="eligibility-results" style="display: none;">
+          <h2>Your Eligibility Results</h2>
+          <p class="results-message">Based on the information provided, you are eligible for the following schemes:</p>
+          
+          <div class="eligible-schemes">
+            <!-- Eligible schemes will be populated here -->
+          </div>
+          
+          <div class="no-eligible-schemes" style="display: none;">
+            <div class="result-icon error">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <h3>No Matching Schemes Found</h3>
+            <p>Based on the information provided, we couldn't find any schemes that you're eligible for. You may want to check again later as new schemes are added regularly.</p>
+          </div>
+          
+          <div class="results-actions">
+            <button id="check-again" class="btn btn-outline">Check Again</button>
+            <a href="schemes.html" class="btn btn-secondary">View All Schemes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="eligibility-faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How accurate is the eligibility check?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our eligibility checker uses the official government criteria for each scheme. While we strive for accuracy, the final eligibility determination is made by the concerned government department during the application process.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is my information secure?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, all your information is secure and encrypted. We do not store any sensitive personal information. Your data is only used to check eligibility and is not shared with any third parties.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What if I'm not eligible for any schemes?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>If you're not eligible for any schemes currently, you can check back later as new schemes are added regularly. You can also modify some of your information and check again, as eligibility criteria may change based on your circumstances.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I apply for multiple schemes?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, you can apply for multiple schemes as long as you meet the eligibility criteria for each scheme. There are no restrictions on the number of schemes you can apply for.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What documents will I need for the application?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>The required documents vary by scheme. When you view the details of a scheme you're eligible for, you'll see a list of required documents. Common documents include identity proof, residence proof, income certificate, and bank details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>SmartSahyata</h3>
+          <p>Your Trusted AI Gateway to Andhra Pradesh Government Schemes</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="schemes.html">Schemes</a></li>
+            <li><a href="eligibility.html">Check Eligibility</a></li>
+            <li><a href="tracking.html">Track Application</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Government Schemes</h3>
+          <ul>
+            <li><a href="schemes/farmer-assistance.html">Farmer Assistance</a></li>
+            <li><a href="schemes/education-scholarship.html">Education Scholarship</a></li>
+            <li><a href="schemes/women-empowerment.html">Women Empowerment</a></li>
+            <li><a href="schemes/healthcare-support.html">Healthcare Support</a></li>
+            <li><a href="schemes.html">View All Schemes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Information</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Government of Andhra Pradesh, Amaravati</li>
+            <li><i class="fas fa-phone"></i> +91 123-456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@smartsahyata.gov.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SmartSahyata. All rights reserved. A Government of Andhra Pradesh Initiative.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/eligibility.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+/* Styles specific to the tracking page */
+
+/* Page Banner */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: var(--neutral-100);
+  padding: var(--space-5) 0;
+  text-align: center;
+}
+
+.page-banner h1 {
+  color: var(--neutral-100);
+  margin-bottom: var(--space-2);
+}
+
+/* Tracking Section */
+.tracking-section {
+  padding: var(--space-5) 0;
+  background-color: var(--neutral-100);
+}
+
+.tracking-intro {
+  max-width: 800px;
+  margin: 0 auto var(--space-4);
+  text-align: center;
+}
+
+.tracking-intro h2 {
+  margin-bottom: var(--space-2);
+}
+
+.tracking-intro p {
+  color: var(--neutral-700);
+}
+
+/* Tracking Form */
+.tracking-form-container {
+  max-width: 600px;
+  margin: 0 auto var(--space-4);
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-3);
+}
+
+#tracking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tracking Result */
+#tracking-result {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.tracking-details {
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-3);
+}
+
+.applicant-info, .status-info, .next-steps {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.applicant-info h3, .status-info h3, .next-steps h3 {
+  margin-bottom: var(--space-2);
+  color: var(--neutral-800);
+  padding-bottom: var(--space-1);
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: var(--space-1);
+}
+
+.info-label {
+  width: 150px;
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+
+.info-value {
+  flex: 1;
+}
+
+.current-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.status-badge.submitted {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.status-badge.verification {
+  background-color: var(--warning);
+  color: #856404;
+}
+
+.status-badge.approved {
+  background-color: var(--success);
+  color: var(--neutral-100);
+}
+
+.status-badge.disbursed {
+  background-color: var(--accent);
+  color: var(--neutral-100);
+}
+
+.status-badge.rejected {
+  background-color: var(--error);
+  color: var(--neutral-100);
+}
+
+.status-message {
+  flex: 1;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--neutral-300);
+  position: relative;
+}
+
+.progress-tracker::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  height: 3px;
+  background-color: var(--neutral-300);
+  z-index: 1;
+}
+
+.progress-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neutral-200);
+  color: var(--neutral-600);
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 0 auto var(--space-2);
+  border: 3px solid var(--neutral-300);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.progress-item.active .progress-icon {
+  background-color: rgba(255, 153, 51, 0.2);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.progress-item.completed .progress-icon {
+  background-color: rgba(19, 136, 8, 0.2);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.progress-content h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.progress-content p {
+  margin-bottom: 0.25rem;
+  color: var(--neutral-600);
+  font-size: 0.875rem;
+}
+
+.progress-date {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--neutral-600);
+}
+
+/* Additional Actions */
+.additional-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+/* No Result Message */
+#no-result {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.no-result-message {
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-2);
+  font-size: 2.5rem;
+}
+
+.result-icon.error {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--error);
+}
+
+.no-result-message h3 {
+  margin-bottom: var(--space-2);
+}
+
+.no-result-message p {
+  margin-bottom: var(--space-3);
+}
+
+/* Tracking Help Section */
+.tracking-help {
+  padding: var(--space-5) 0;
+  background-color: var(--neutral-200);
+}
+
+.help-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.help-item {
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+}
+
+.help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 153, 51, 0.1);
+  color: var(--primary);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+  flex-shrink: 0;
+}
+
+.help-content h3 {
+  margin-bottom: var(--space-1);
+  font-size: 1.1rem;
+}
+
+.help-content p {
+  font-size: 0.9rem;
+  color: var(--neutral-600);
+}
+
+/* FAQ Section */
+.tracking-faq {
+  padding: var(--space-5) 0;
+  background-color: var(--neutral-100);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2);
+  background-color: var(--neutral-200);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.faq-question:hover {
+  background-color: var(--neutral-300);
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.faq-question i {
+  transition: transform var(--transition-fast);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal), padding var(--transition-normal);
+}
+
+.faq-item.active .faq-answer {
+  padding: var(--space-2);
+  max-height: 300px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .help-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-tracker {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .progress-tracker::before {
+    top: 40px;
+    bottom: 40px;
+    left: 40px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+  
+  .progress-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--space-2);
+  }
+  
+  .progress-icon {
+    margin: 0 var(--space-2) 0 0;
+  }
+  
+  .progress-content {
+    text-align: left;
+  }
+  
+  .additional-actions {
+    flex-direction: column;
+  }
+  
+  .help-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .current-status {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .info-row {
+    flex-direction: column;
+  }
+  
+  .info-label {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+}

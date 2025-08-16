@@ -1,0 +1,245 @@
+/* Styles specific to the schemes page */
+
+/* Page Banner */
+.page-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: var(--neutral-100);
+  padding: var(--space-5) 0;
+  text-align: center;
+}
+
+.page-banner h1 {
+  color: var(--neutral-100);
+  margin-bottom: var(--space-2);
+}
+
+/* Schemes Search Section */
+.schemes-search {
+  padding: var(--space-4) 0;
+  background-color: var(--neutral-100);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.search-box {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto var(--space-3);
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  font-size: 1rem;
+}
+
+.search-box button {
+  background-color: var(--primary);
+  color: var(--neutral-100);
+  border: none;
+  padding: 0 var(--space-2);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.search-box button:hover {
+  background-color: var(--primary-dark);
+}
+
+.filter-box {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.filter-group {
+  width: 200px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: 500;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--radius-md);
+  background-color: var(--neutral-100);
+}
+
+/* Schemes List Section */
+.schemes-list {
+  padding: var(--space-5) 0;
+  background-color: var(--neutral-200);
+}
+
+.schemes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.scheme-card {
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.scheme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.scheme-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scheme-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.scheme-card:hover .scheme-image img {
+  transform: scale(1.1);
+}
+
+.scheme-category {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  background-color: var(--primary);
+  color: var(--neutral-100);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.scheme-content {
+  padding: var(--space-2);
+}
+
+.scheme-content h3 {
+  margin-bottom: var(--space-1);
+}
+
+.scheme-content p {
+  color: var(--neutral-700);
+  margin-bottom: var(--space-2);
+  min-height: 3rem;
+}
+
+.scheme-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--space-2);
+  color: var(--neutral-600);
+  font-size: 0.875rem;
+}
+
+.scheme-meta span {
+  display: flex;
+  align-items: center;
+}
+
+.scheme-meta i {
+  margin-right: 0.5rem;
+  color: var(--primary);
+}
+
+.scheme-card .btn {
+  width: 100%;
+}
+
+#no-results {
+  text-align: center;
+  padding: var(--space-4);
+}
+
+/* Scheme Comparison Section */
+.scheme-comparison {
+  padding: var(--space-5) 0;
+  background-color: var(--neutral-100);
+}
+
+.compare-selection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-top: var(--space-3);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--neutral-300);
+}
+
+.comparison-table th, .comparison-table td {
+  padding: var(--space-2);
+  text-align: left;
+  border: 1px solid var(--neutral-300);
+}
+
+.comparison-table th {
+  background-color: var(--neutral-200);
+  font-weight: 600;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: var(--neutral-200);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .schemes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-group {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .compare-selection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .schemes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .scheme-content p {
+    min-height: auto;
+  }
+}

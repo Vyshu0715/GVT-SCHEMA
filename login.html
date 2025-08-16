@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Government Login Portal</title>
+  <style>
+    /* (No changes to your styles) */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://source.unsplash.com/1600x900/?india,technology');
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(5px);
+    }
+
+      .login-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #e65100;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e65100;
+    }
+  </style>
+
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"; // Added serverTimestamp and setLogLevel
+
+    // Firebase config - ENSURE THIS IS CORRECT AND FOR THE RIGHT PROJECT
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpW8BQb-h2DAd2EJlCPTrO-9QaUQSZoG0", // IMPORTANT: Replace with your actual API key if this is a placeholder
+      authDomain: "artshayata.firebaseapp.com",
+      projectId: "artshayata",
+      storageBucket: "artshayata.appspot.com", // Corrected typical storage bucket format
+      messagingSenderId: "638231660782",
+      appId: "1:638231660782:web:cea9ef292e5db0cdac4bff",
+      measurementId: "G-VD8VMH7HKN"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    // Enable Firestore debug logging for more detailed console output
+    setLogLevel('debug');
+
+    // Wait for the DOM to be fully loaded before attaching event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('login-form');
+      if (loginForm) {
+        loginForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value; // Storing passwords in plain text is a security risk. Consider hashing or using Firebase Auth.
+          const role = document.getElementById('role').value;
+          const district = document.getElementById('district').value;
+
+          // Data to be saved to Firestore
+          const dataToSave = {
+            username,
+            password, // Again, be mindful of storing plain text passwords
+            role,
+            district,
+            timestamp: serverTimestamp() // Use serverTimestamp for reliability
+          };
+
+          // **CRITICAL DEBUGGING STEP:** Log the data object to the console
+          console.log("Attempting to write this data to Firestore:", dataToSave);
+          // You can also stringify it to see its exact JSON representation before SDK processing:
+          // console.log("Data as JSON string:", JSON.stringify(dataToSave, null, 2));
+
+
+          try {
+            const docRef = await addDoc(collection(db, "logins"), dataToSave);
+            console.log("Document written with ID: ", docRef.id);
+            alert("Data saved successfully! Document ID: " + docRef.id); // Provide feedback
+            // window.location.href = "http://localhost:5173/"; // Redirect on success
+          } catch (error) {
+            console.error("Error saving data to Firestore: ", error); // Log the full error object
+            alert("Error saving data: " + error.message + "\nCheck the console for more details.");
+          }
+        });
+      } else {
+        console.error("Login form not found!");
+      }
+    });
+  </script>
+
+</head>
+<body>
+  <div class="login-container">
+    <h2>Government Login</h2>
+    <form id="login-form" action="./admin/project/index.html">
+      <label for="username">EMPLOYEE ID</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="role">Role</label>
+      <select id="role" name="role" required>
+        <option value="">--Select Role--</option>
+        <option value="District Collector">District Collector</option>
+        <option value="Mandal Officer">Mandal Officer</option>
+        <option value="Village Officer">Village Officer</option>
+        <option value="Revenue Department">Revenue Department</option>
+        <option value="Health Department">Health Department</option>
+        <option value="Education Department">Education Department</option>
+      </select>
+
+      <label for="district">District</label>
+      <select id="district" name="district" required>
+        <option value="">--Select District--</option>
+        <option value="Anantapur">Anantapur</option>
+        <option value="Chittoor">Chittoor</option>
+        <option value="East Godavari">East Godavari</option>
+        <option value="Guntur">Guntur</option>
+        <option value="Kadapa">Kadapa</option>
+        <option value="Krishna">Krishna</option>
+        <option value="Kurnool">Kurnool</option>
+        <option value="Nellore">Nellore</option>
+        <option value="Prakasam">Prakasam</option>
+        <option value="Srikakulam">Srikakulam</option>
+        <option value="Visakhapatnam">Visakhapatnam</option>
+        <option value="Vizianagaram">Vizianagaram</option>
+        <option value="West Godavari">West Godavari</option>
+        <option value="Parvathipuram Manyam">Parvathipuram Manyam</option>
+        <option value="Anakapalli">Anakapalli</option>
+        <option value="Alluri Sitharama Raju">Alluri Sitharama Raju</option>
+        <option value="Bapatla">Bapatla</option>
+        <option value="Eluru">Eluru</option>
+        <option value="Nandyal">Nandyal</option>
+        <option value="Tirupati">Tirupati</option>
+        <option value="Konaseema">Konaseema</option>
+        <option value="Kakinada">Kakinada</option>
+        <option value="NTR">NTR</option>
+        <option value="Palnadu">Palnadu</option>
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>     

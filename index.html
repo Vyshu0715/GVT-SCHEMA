@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSahyata - AI Gateway to AP Government Schemes</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="./Capture.PNG" type="image/x-icon">
+  <style>
+    .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 250px;
+  }
+  .popup-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+  } 
+  .popup-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .popup-content button:hover {
+    background-color: #0056b3;
+  }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <img src="./Capture.PNG" style="height: 80px;width: 150px;"> 
+      <nav id="nav">  
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="schemes.html">Schemes</a></li>
+          <li><a href="eligibility.html">Check Eligibility</a></li>
+          <li><a href="tracking.html">Track Application</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><img src="./profile.avif" style="height: 30px; width: 30px;" id='profile-pic'/></li>
+        </ul>
+        
+      </nav>
+      <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+        <p>Only admin can login</p>
+        <button id="admin-login-btn" href="./login.html">Admin Login</button>
+        </div>
+      </div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Your Trusted AI Gateway to Andhra Pradesh Government Schemes</h1>
+        <p>Empowering Citizens. Simplifying Access. Delivering Welfare.</p>
+        <div class="hero-buttons">
+          <a href="schemes.html" class="btn btn-primary">Explore Schemes</a>
+          <a href="eligibility.html" class="btn btn-secondary">Check Eligibility</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">How SmartSahyata Works</h2>
+      <div class="feature-grid">
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Explore Personalized Scheme Pages</h3>
+          <p>Each government scheme gets its own dedicated page filled with complete details — purpose, benefits, required documents, deadlines, and eligibility criteria.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Run Instant Eligibility Check</h3>
+          <p>Our AI agent guides users through a quick, intelligent screening process. It checks real-time eligibility against official parameters.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Get Tailored Access to Application Forms</h3>
+          <p>Based on eligibility outcome, the system unlocks the application form for that specific scheme, with relevant fields and simplified instructions.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3>Submit Confidently, Track Easily</h3>
+          <p>Approved applicants are guided to submit forms securely. A tracking ID helps them monitor the status of their application with full transparency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-content">
+        <div class="benefits-text">
+          <h2 class="section-title">What Makes SmartSahyata a Game-Changer?</h2>
+          <ul class="benefits-list">
+            <li>
+              <i class="fas fa-file-alt"></i>
+              <div>
+                <h3>Fully Customized Scheme Pages</h3>
+                <p>Every scheme has a dedicated, content-rich page that simplifies understanding and eliminates confusion.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-brain"></i>
+              <div>
+                <h3>Eligibility-First Form Access</h3>
+                <p>No irrelevant forms. No wasted time. Forms only appear after confirming eligibility — tailored to the citizen's unique profile.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-cogs"></i>
+              <div>
+                <h3>Dynamic Form Generation</h3>
+                <p>Every form adapts in real time based on user input. No manual adjustments, no ambiguity.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-chart-line"></i>
+              <div>
+                <h3>Policy-Grade Precision</h3>
+                <p>Rules are mapped directly from official government guidelines — ensuring accurate approvals and rejections, with documented reasoning.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="benefits-image">
+          <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg" alt="Citizens benefiting from government schemes">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schemes-preview">
+    <div class="container">
+      <h2 class="section-title">Popular Government Schemes</h2>
+      <div class="schemes-grid">
+        <div class="scheme-card">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/4629628/pexels-photo-4629628.jpeg" alt="Farmer Assistance Scheme">
+          </div>
+          <div class="scheme-content">
+            <h3>Farmer Assistance Scheme</h3>
+            <p>Financial assistance for farmers to improve agricultural productivity and income.</p>
+            <a href="pages/schemes/farmer-assistance.html" class="btn btn-small">Learn More</a>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/8471831/pexels-photo-8471831.jpeg" alt="Education Scholarship">
+          </div>
+          <div class="scheme-content">
+            <h3>Education Scholarship</h3>
+            <p>Scholarships for students from economically weaker sections to pursue higher education.</p>
+            <a href="pages/schemes/education-scholarship.html" class="btn btn-small">Learn More</a>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg" alt="Women Empowerment Program">
+          </div>
+          <div class="scheme-content">
+            <h3>Women Empowerment Program</h3>
+            <p>Supporting women entrepreneurs with training, financial assistance, and mentorship.</p>
+            <a href="pages/schemes/women-empowerment.html" class="btn btn-small">Learn More</a>
+          </div>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-image">
+            <img src="https://images.pexels.com/photos/7551442/pexels-photo-7551442.jpeg" alt="Healthcare Support">
+          </div>
+          <div class="scheme-content">
+            <h3>Healthcare Support</h3>
+            <p>Medical insurance and healthcare support for underprivileged families.</p>
+            <a href="pages/schemes/healthcare-support.html" class="btn btn-small">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="pages/schemes.html" class="btn btn-primary">View All Schemes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Success Stories</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-slide active">
+          <div class="testimonial-content">
+            <p>"SmartSahyata helped me easily apply for the farmer assistance scheme. The process was smooth, and I received the benefits within a month."</p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Rajesh Kumar">
+              <div>
+                <h4>Rajesh Kumar</h4>
+                <p>Farmer, East Godavari</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <p>"Thanks to the education scholarship I received through SmartSahyata, I am now pursuing my engineering degree. The eligibility check made it easy to know which schemes I qualified for."</p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg" alt="Priya Sharma">
+              <div>
+                <h4>Priya Sharma</h4>
+                <p>Student, Guntur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <p>"The women empowerment program has transformed my life. I started my small business with the loan I received, and now I employ five other women from my village."</p>
+            <div class="testimonial-author">
+              <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg" alt="Lakshmi Devi">
+              <div>
+                <h4>Lakshmi Devi</h4>
+                <p>Entrepreneur, Vizag</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button id="prev-testimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+        <button id="next-testimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Access Government Benefits?</h2>
+        <p>Check your eligibility for various government schemes and apply online in minutes.</p>
+        <a href="pages/eligibility.html" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>SmartSahyata</h3>
+          <p>Your Trusted AI Gateway to Andhra Pradesh Government Schemes</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/schemes.html">Schemes</a></li>
+            <li><a href="pages/eligibility.html">Check Eligibility</a></li>
+            <li><a href="pages/tracking.html">Track Application</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Government Schemes</h3>
+          <ul>
+            <li><a href="pages/schemes/farmer-assistance.html">Farmer Assistance</a></li>
+            <li><a href="pages/schemes/education-scholarship.html">Education Scholarship</a></li>
+            <li><a href="pages/schemes/women-empowerment.html">Women Empowerment</a></li>
+            <li><a href="pages/schemes/healthcare-support.html">Healthcare Support</a></li>
+            <li><a href="pages/schemes.html">View All Schemes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Information</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Government of Andhra Pradesh, Amaravati</li>
+            <li><i class="fas fa-phone"></i> +91 123-456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@smartsahyata.gov.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SmartSahyata. All rights reserved. A Government of Andhra Pradesh Initiative.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/home.js"></script>
+  
+<script>
+  const profilePic = document.getElementById('profile-pic');
+  const popup = document.getElementById('popup');
+  const adminLoginBtn = document.getElementById('admin-login-btn');
+
+  profilePic.addEventListener('click', () => {
+    popup.style.display = 'flex';
+  });
+
+  // Close popup if click outside popup-content
+  popup.addEventListener('click', (e) => {
+    if(e.target === popup){
+      popup.style.display = 'none';
+    }
+  });
+   
+  adminLoginBtn.addEventListener('click', () => {
+    window.location.href="./login.html"
+    popup.style.display = 'none';
+  });
+</script>
+</body>
+</html>
